@@ -58,7 +58,7 @@
       <a href="https://www.instagram.com/wennnnboo" target="_blank" rel="noopener" class="footer-link">Instagram</a>
       <a href="mailto:boboxu74@gmail.com" class="footer-link">Email</a>
     </div>
-    <p class="footer-copy">Built by <strong>Aerie</strong></p>
+    <p class="footer-copy">Built by <a href="https://aerwins-yyw.github.io/aerie-website/" target="_blank" rel="noopener" class="footer-link" style="font-weight:600">Aerie</a></p>
   </div>
 </footer>`;
 
