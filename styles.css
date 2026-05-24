@@ -389,7 +389,6 @@ button { font-family: inherit; cursor: pointer; border: none; }
   padding: 20px 0;
   border-bottom: 1px solid var(--border);
 }
-.pub-item:first-child { border-top: 1px solid var(--border); }
 .pub-year {
   font-size: 12px;
   font-weight: 600;
@@ -413,7 +412,6 @@ button { font-family: inherit; cursor: pointer; border: none; }
   padding: 28px 0;
   border-bottom: 1px solid var(--border);
 }
-.timeline-item:first-child { border-top: 1px solid var(--border); }
 .timeline-period {
   font-size: 12px;
   font-weight: 600;
