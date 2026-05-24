@@ -22,6 +22,7 @@
 
 /* ── Dark mode tokens ── */
 [data-theme="dark"] {
+  background: #0f172a;
   --bg: #0f172a;
   --bg-card: #1e293b;
   --bg-subtle: #1e293b;
@@ -46,6 +47,7 @@ body {
   line-height: 1.8;
   background: var(--bg);
   color: var(--text);
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
