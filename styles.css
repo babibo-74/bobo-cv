@@ -472,13 +472,6 @@ button { font-family: inherit; cursor: pointer; border: none; }
   line-height: 1.8;
 }
 
-/* ── Quick nav buttons (landing) ── */
-.quick-nav-btns {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
 /* ── CTA strip ── */
 .cta-strip {
   background: var(--text);
