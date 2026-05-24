@@ -42,7 +42,7 @@
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
   font-size: 12px;
   line-height: 1.8;
   background: var(--bg);
