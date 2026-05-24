@@ -295,7 +295,6 @@ button { font-family: inherit; cursor: pointer; border: none; }
 /* ── Sections ── */
 .section {
   padding: 72px 0;
-  border-top: 1px solid var(--border);
 }
 .section-label {
   font-size: 11px;
@@ -383,6 +382,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 
 /* ── Publications & Involvement list (shared) ── */
 .pub-list { display: flex; flex-direction: column; }
+.pub-item:first-child { border-top: 1px solid var(--border); }
 .pub-item {
   display: grid;
   grid-template-columns: 180px 1fr;
@@ -406,6 +406,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 
 /* ── Timeline ── */
 .timeline { display: flex; flex-direction: column; }
+.timeline-item:first-child { border-top: 1px solid var(--border); }
 .timeline-item {
   display: grid;
   grid-template-columns: 180px 1fr;
