@@ -472,36 +472,12 @@ button { font-family: inherit; cursor: pointer; border: none; }
   line-height: 1.8;
 }
 
-/* ── Quick nav cards (landing) ── */
-.quick-nav {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  padding-bottom: 0;
-}
-.quick-nav-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--r-lg);
-  padding: 24px;
+/* ── Quick nav buttons (landing) ── */
+.quick-nav-btns {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  transition: box-shadow .2s, transform .2s, border-color .2s;
+  gap: 12px;
+  flex-wrap: wrap;
 }
-.quick-nav-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); border-color: var(--border-2); }
-.quick-nav-title {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text);
-  letter-spacing: -.01em;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.quick-nav-arrow { color: var(--accent); font-size: 14px; transition: transform .15s; }
-.quick-nav-card:hover .quick-nav-arrow { transform: translateX(4px); }
-.quick-nav-desc { font-size: 12px; line-height: 1.7; color: var(--text-3); }
 
 /* ── CTA strip ── */
 .cta-strip {
@@ -577,7 +553,6 @@ footer { border-top: 1px solid var(--border); }
   .project-grid { grid-template-columns: 1fr; }
   .features { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
-  .quick-nav { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
   .page { padding: 0 20px; }
