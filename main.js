@@ -53,11 +53,7 @@
 <footer>
   <div class="footer-inner">
     <p class="footer-copy" data-en="© 2026 Wenbo XU" data-zh="© 2026 徐雯博">© 2026 Wenbo XU</p>
-    <div class="footer-links">
-      <a href="https://www.linkedin.com/in/wenbo74/" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
-      <a href="https://www.instagram.com/wennnnboo" target="_blank" rel="noopener" class="footer-link">Instagram</a>
-      <a href="mailto:boboxu74@gmail.com" class="footer-link">Email</a>
-    </div>
+    <p class="footer-copy">Built by <strong>Aerie</strong></p>
   </div>
 </footer>`;
 
