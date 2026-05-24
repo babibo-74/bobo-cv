@@ -1,7 +1,12 @@
 (function () {
   'use strict';
 
-  // ── Shared components (defined once, injected into every page) ──
+  // Apply theme immediately to prevent flash of wrong colour
+  const _initTheme = localStorage.getItem('preferred-theme') ||
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', _initTheme);
+
+  // ── Shared components ──────────────────────────────────
   const NAV_HTML = `
 <nav class="nav" style="position:relative">
   <div class="nav-inner">
@@ -17,6 +22,10 @@
         <button class="lang-btn" onclick="setLang('en')">EN</button>
         <button class="lang-btn" onclick="setLang('zh')">中文</button>
       </div>
+      <div class="lang-toggle">
+        <button class="lang-btn theme-light-btn" onclick="setTheme('light')">Light</button>
+        <button class="lang-btn theme-dark-btn" onclick="setTheme('dark')">Dark</button>
+      </div>
       <button class="nav-hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -27,6 +36,16 @@
     <a href="about.html" class="nav-link" data-en="About" data-zh="关于">About</a>
     <a href="projects.html" class="nav-link" data-en="Projects" data-zh="项目">Projects</a>
     <a href="resume.html" class="nav-link" data-en="Resume" data-zh="简历">Resume</a>
+    <div class="nav-mobile-toggles">
+      <div class="lang-toggle">
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('zh')">中文</button>
+      </div>
+      <div class="lang-toggle">
+        <button class="lang-btn theme-light-btn" onclick="setTheme('light')">Light</button>
+        <button class="lang-btn theme-dark-btn" onclick="setTheme('dark')">Dark</button>
+      </div>
+    </div>
   </div>
 </nav>`;
 
@@ -45,6 +64,15 @@
   document.body.insertAdjacentHTML('afterbegin', NAV_HTML);
   document.body.insertAdjacentHTML('beforeend', FOOTER_HTML);
 
+  // ── Theme toggle ──────────────────────────────────────
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('preferred-theme', theme);
+    document.querySelectorAll('.theme-light-btn').forEach(b => b.classList.toggle('active', theme === 'light'));
+    document.querySelectorAll('.theme-dark-btn').forEach(b => b.classList.toggle('active', theme === 'dark'));
+  }
+  window.setTheme = setTheme;
+
   // ── Language toggle ──────────────────────────────────────
   function setLang(lang) {
     localStorage.setItem('preferred-lang', lang);
@@ -55,7 +83,7 @@
     const isZh = lang === 'zh';
     document.documentElement.lang = isZh ? 'zh-CN' : 'en';
 
-    document.querySelectorAll('.lang-btn').forEach(btn => {
+    document.querySelectorAll('.lang-btn:not(.theme-light-btn):not(.theme-dark-btn)').forEach(btn => {
       btn.classList.toggle('active',
         (!isZh && btn.textContent.trim() === 'EN') ||
         (isZh && btn.textContent.trim() === '中文')
@@ -107,6 +135,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     const lang = localStorage.getItem('preferred-lang') || 'en';
     applyLang(lang);
+    setTheme(document.documentElement.getAttribute('data-theme') || 'light');
     setActiveNav();
     initFadeIn();
     initHamburger();
